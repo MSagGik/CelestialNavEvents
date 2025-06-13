@@ -62,8 +62,12 @@ All calculations run locally; no internet connection is required.
 1. In your project `settings.gradle` (or `settings.gradle.kts`):
 
    ```kotlin
-   repositories {
-       maven { url = uri("https://jitpack.io") }
+   dependencyResolutionManagement {
+       repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+       repositories {
+           mavenCentral()
+           maven { url = uri("https://jitpack.io") }
+       }
    }
    ```
 
@@ -71,7 +75,7 @@ All calculations run locally; no internet connection is required.
 
    ```kotlin
    dependencies {
-       implementation("com.github.msaggik:CelestialNavEvents:0.1.0")
+       implementation("com.github.MSagGik:CelestialNavEvents:0.1.0")
    }
    ```
 
