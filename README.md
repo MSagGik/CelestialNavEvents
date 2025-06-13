@@ -2,6 +2,8 @@
 
 **CelestialNavEvents** is a lightweight Kotlin library for calculating common Sun and Moon events—sunrise, sunset, twilight phases, moonrise, moonset, lunar phases (in days), illumination, and more. It works offline worldwide using only geographic coordinates and time in the Java standard `ZonedDateTime` format.
 
+[![](https://jitpack.io/v/MSagGik/CelestialNavEvents.svg)](https://jitpack.io/#MSagGik/CelestialNavEvents)
+
 ---
 
 ## 📖 Overview

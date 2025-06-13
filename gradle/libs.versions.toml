@@ -1,7 +1,8 @@
 [versions]
 versionName = "0.1.0"
 
-kotlin = "2.1.20"
+kotlin = "1.9.24"
+dokkaVersion = "1.8.20"
 jupiter = "5.10.0"
 jupiterPlatform = "1.10.0"
 
@@ -14,3 +15,4 @@ jupiter-platform = { module = "org.junit.platform:junit-platform-suite", version
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaVersion" }
