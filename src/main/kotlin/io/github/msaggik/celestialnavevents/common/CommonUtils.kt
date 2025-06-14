@@ -17,4 +17,16 @@ package io.github.msaggik.celestialnavevents.common
  */
 
 
+/**
+ * Public utility object providing common helper functions and constants
+ * accessible throughout the CelestialNavEvents library and by its users.
+ *
+ * Implemented as a Kotlin singleton object, ensuring a single shared
+ * instance throughout the application lifecycle.
+ *
+ * Serves as a centralized place for reusable general-purpose methods
+ * that do not belong to specific modules.
+ *
+ * Intended as a foundation for future common utility implementations.
+ */
 object CommonUtils {}
