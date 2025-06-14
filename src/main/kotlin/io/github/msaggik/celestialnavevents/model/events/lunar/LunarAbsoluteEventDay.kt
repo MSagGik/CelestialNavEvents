@@ -21,6 +21,22 @@ import io.github.msaggik.celestialnavevents.model.state.HorizonCrossingLunarStat
  */
 
 
+/**
+ * Represents a collection of lunar events and related characteristics for a given day,
+ * expressed in absolute terms (e.g., exact timestamps).
+ *
+ * @property events List of upcoming lunar events with absolute timing information.
+ * @property type The current horizon crossing state of the Moon (e.g., risen, set, both, or none).
+ * @property preType The previous horizon crossing state, useful for detecting transitions.
+ * @property visibleLength Duration of the Moon's visibility during the day, if calculable.
+ * @property invisibleLength Duration of the Moon's invisibility during the day, if calculable.
+ * @property meridianCrossing Exact time when the Moon crosses the local meridian (highest point).
+ * @property antimeridianCrossing Exact time when the Moon crosses the antimeridian (lowest point).
+ * @property ageInDays Lunar age in days since the last new moon, useful for phase determination.
+ * @property illuminationPercent Percentage of the Moon's visible surface illuminated by the Sun (0.0 to 100.0).
+ *
+ * Use [getDefaultLunarAbsoluteEventDay] to create an instance with empty events and default values.
+ */
 data class LunarAbsoluteEventDay(
     val events: List<UpcomingAbsoluteEvent>,
     val type: HorizonCrossingLunarState? = null,
