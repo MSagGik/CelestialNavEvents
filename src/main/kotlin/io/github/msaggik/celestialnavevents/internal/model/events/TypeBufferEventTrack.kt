@@ -16,7 +16,14 @@ package io.github.msaggik.celestialnavevents.internal.model.events
  * limitations under the License.
  */
 
-
+/**
+ * Enum representing the buffer track type for solar elevation thresholds in event detection.
+ *
+ * - [LOWER]: Events at the lower solar elevation threshold (e.g., horizon crossings).
+ * - [UPPER]: Events at the upper solar elevation threshold (e.g., civil twilight).
+ *
+ * Used to differentiate and pair events from different elevation levels when building solar event intervals.
+ */
 internal enum class TypeBufferEventTrack{
     UPPER,
     LOWER
