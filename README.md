@@ -75,7 +75,7 @@ All calculations run locally; no internet connection is required.
 
    ```kotlin
    dependencies {
-       implementation("com.github.MSagGik:CelestialNavEvents:0.1.0")
+       implementation("com.github.MSagGik:CelestialNavEvents:0.1.1")
    }
    ```
 
