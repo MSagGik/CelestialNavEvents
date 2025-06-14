@@ -39,6 +39,21 @@ import kotlin.test.assertFailsWith
 private const val TIME_TOLERANCE_MS = 2.1 * 60 * 1000L
 private const val AZIMUTH_TOLERANCE = 2.0
 
+/**
+ * Unit tests for lunar event calculations in CelestialNavEvents.
+ *
+ * This test class verifies the correctness of the lunar event day calculations,
+ * specifically focusing on moonrise and moonset detection, their timing, and azimuth values.
+ *
+ * Key aspects tested:
+ * - Correct classification of lunar horizon crossing states.
+ * - Accuracy of azimuth angles for rise and set events within a defined tolerance.
+ * - Time precision validation with a tolerance of ±[TIME_TOLERANCE_MS].
+ *
+ * Constants:
+ * - [TIME_TOLERANCE_MS]: Maximum allowed deviation in event timing.
+ * - [AZIMUTH_TOLERANCE]: Maximum allowed deviation in azimuth angle.
+ */
 class LunarEventTest {
 
     private fun assertAzimuthClose(actual: Double, expected: Double) {

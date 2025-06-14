@@ -39,6 +39,10 @@ import io.github.msaggik.celestialnavevents.api.impl.CelestialEventsCalculatorIm
  */
 class CelestialNavEvents {
 
+    /**
+     * Lazily initialized singleton instance of [CelestialEventsCalculator].
+     * Provides solar and lunar event calculation logic.
+     */
     private val calculator: CelestialEventsCalculator by lazy {
         CelestialEventsCalculatorImpl()
     }
