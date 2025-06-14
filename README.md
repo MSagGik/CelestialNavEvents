@@ -48,7 +48,7 @@ All calculations run locally; no internet connection is required.
 ### ⚙️ Technical Highlights
 
 - Offline, worldwide support (no external data sources)
-- Uses standart `java.time.ZonedDateTime` for accurate timezone handling
+- Uses standard `java.time.ZonedDateTime` for accurate timezone handling
 - Simple Kotlin-style API (DSL-like usage)
 - Unit-tested against public data (e.g., timeanddate.com)
 - Modular design: solar and lunar calculators are separate components
@@ -88,7 +88,7 @@ import io.github.msaggik.celestialnavevents.CelestialNavEvents
 import java.time.ZonedDateTime
 
 fun main() {
-    val celestial = CelestialNavEvents.create()
+    val celestial = CelestialNavEvents().provide()
 
     val solarEvents = celestial.solar().calculateSolarEventDay(
         latitude = 12.345,
@@ -114,7 +114,7 @@ fun main() {
 ### Entry Point
 
 ```kotlin
-val celestial: CelestialEventsCalculator = CelestialNavEvents.create()
+val celestial: CelestialEventsCalculator = CelestialNavEvents().provide()
 ```
 
 ### Solar Events
@@ -134,7 +134,7 @@ val celestial: CelestialEventsCalculator = CelestialNavEvents.create()
 - `calculateLunarEventDay(...)`
 - `findUpcomingLunarAbsoluteEventDay(...)`
 - `findUpcomingLunarRelativeEventDay(...)`
-- `findUpcomingLunarRelativeShortEventDa(...)`
+- `findUpcomingLunarRelativeShortEventDay(...)`
 
 ---
 
@@ -152,7 +152,7 @@ val celestial: CelestialEventsCalculator = CelestialNavEvents.create()
 ## 🏗️ Architecture & Design
 
 - **Modular Structure**️\
-  Factory via `CelestialNavEvents.create()`\
+  Factory via `CelestialNavEvents.provide()`\
   Interfaces: `CelestialEventsCalculator`, `SolarEventsCalculator`, `LunarEventsCalculator`
 
 - **Patterns & Practices** \

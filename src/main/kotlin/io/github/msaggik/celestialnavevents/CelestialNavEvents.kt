@@ -21,26 +21,33 @@ import io.github.msaggik.celestialnavevents.api.impl.CelestialEventsCalculatorIm
 
 
 /**
- * Entry point and factory for creating an instance of the unified astronomical events calculator.
+ * Entry point and factory for accessing unified solar and lunar astronomical event calculations.
  *
- * This object provides a simplified way to access both solar and lunar event calculators through
- * a single call to [create], following the Factory and Facade design patterns.
+ * This class acts as a facade and factory for accessing [CelestialEventsCalculator],
+ * which provides methods to compute solar and lunar events.
  *
- * Example usage:
- * ```
- * val celestial = CelestialNavEvents.create()
- * val sunEvents = celestial.solar().calculateSunEvent(...)
- * val moonEvents = celestial.lunar().calculateMoonEvent(...)
+ * ## Design Patterns
+ * - **Factory Pattern**: Instantiates and returns a unified calculator.
+ * - **Facade Pattern**: Hides the complexity of the underlying implementations.
+ *
+ * ## Example
+ * ```kotlin
+ * val celestial = CelestialNavEvents().provide()
+ * val sunEvent = celestial.solar().calculateSolarEventDay(...)
+ * val moonEvent = celestial.lunar().calculateLunarEventDay(...)
  * ```
  */
-object CelestialNavEvents {
+class CelestialNavEvents {
+
+    private val calculator: CelestialEventsCalculator by lazy {
+        CelestialEventsCalculatorImpl()
+    }
 
     /**
-     * Creates a new instance of [CelestialEventsCalculator], which provides access
-     * to both solar and lunar astronomical event calculations.
+     * Provides a singleton instance of [CelestialEventsCalculator], which allows access to both
+     * solar and lunar astronomical event calculations.
      *
-     * @return A [CelestialEventsCalculator] implementation that acts as a unified interface
-     *         to all celestial navigation computations.
+     * @return A unified [CelestialEventsCalculator] implementation.
      */
-    fun create(): CelestialEventsCalculator = CelestialEventsCalculatorImpl()
+    fun provide(): CelestialEventsCalculator = calculator
 }
