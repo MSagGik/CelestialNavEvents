@@ -17,5 +17,4 @@ package io.github.msaggik.celestialnavevents.common
  */
 
 
-object CommonUtils {
-}
+object CommonUtils {}
